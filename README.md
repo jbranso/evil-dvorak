@@ -52,7 +52,7 @@ Keybinding         | Description
 <kbd> C-c r </kbd> |  This begins to define an evil macro.  In emacs state the binding for this in C-x (
 <kbd> C-h </kbd>   |  insert a new line below point and switch to insert state
 <kbd> C-t </kbd>   | insert a new line above point and switch to insert state.  The reader should not that this conflicts with the emacs binding of (transpose-chars), which I have rebound to (global-set-key (kbd "C-c t") 'transpose-chars)
-<kbd> spacebar  </kbd>  inserts a space.
+<kbd> spacebar  </kbd> |  inserts a space.
 <kbd> \>  </kbd>  | move point to the beginning of the buffer
 <kbd> \<  </kbd>  | move point to the end of the buffer
 <kbd>   </kbd>
