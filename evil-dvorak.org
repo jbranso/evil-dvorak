@@ -1,0 +1,15 @@
+* Evil dvorak summary
+  Evil dvorak mode allows the user to use the dvorak keyboard with evil-mode.  Here's a quick summary of keyboards.  The default
+  keyboard layout is the qwerty keyboard.  If your top left corner of your keyboard spells, qwerty, then you are using a querty
+  keyboard.  The qwerty layout is an outdated keyboard layout.  It was designed for typewriters.  If those days, if you pressed two
+  keys together too soon, the keys would get stuck.  To decrease the chance of keys getting stuck while typing, the qwerty keyboard
+  layout was designed.  It's design goal is to spead out keys that are unlikely to be pressed.
+
+  I already use C-k for kill-line. I should make k be kill-line, and make K be kill to the beginning of line, then unset C-k.
+
+  Also it should be possible for me to make a yl for yank line command!
+
+  This file does not and should not have any keybindings of the form "C-c <keys>" Emacs specifies that keybindings of the form "C-c
+<keys>" are reservered for the users to define.
+
+* Evil dvorak keybindings
