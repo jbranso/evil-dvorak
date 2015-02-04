@@ -168,7 +168,8 @@
   (kbd "C-n") 'backward-char
   (kbd "C-s") 'forward-char
   (kbd "C-i") 'info-display-manual
-  (kbd "C-z") 'evil-normal-state)
+  (kbd "C-z") 'evil-normal-state
+  (kbd "C-c r") 'evil-record-macro)
 
 ;; I would like to use these, but they do not work well with golden-ratio-mode
 ;;(evil-define-key 'emacs (kbd "C-w h") 'evil-window-down)

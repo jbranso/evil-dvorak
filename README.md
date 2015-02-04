@@ -27,10 +27,12 @@ Keybinding         | Description
 <kbd> t </kbd>     | move the cursor one line down
 <kbd> n </kbd>     | move the cursor one character to the left
 <kbd> s </kbd>   | move the cursor one character to the right
-<kbd></kbd>     | Join two lines into one(`prelude-top-join-line`).
-<kbd></kbd>   | Start `proced` (manage processes from Emacs; works only in Linux).
-<kbd></kbd>   | Start `eshell`.
-<kbd></kbd> | Start your default shell.
+<kbd> o </kbd>     | move backward one word
+<kbd> O </kbd>     | move backward one WORD
+<kbd> e </kbd>   | move forward one word
+<kbd> E </kbd>   | move forward one WORD
+<kbd> a </kbd>   | Start `eshell`.
+<kbd> u </kbd> | Start your default shell.
 <kbd></kbd> | Alias for `M-x`.
 <kbd></kbd>     | Like `M-x` but limited to commands that are relevant to the active major mode.
 <kbd></kbd>   | Run `apropos` (search in all Emacs symbols).
