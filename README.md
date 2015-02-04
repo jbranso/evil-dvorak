@@ -49,3 +49,11 @@ Keybinding         | Description
 <kbd> ; </kbd>     | comment-dwin. This is an emacs command that either adds a comment to the current line, or if the line is highlighted, then it comments out the line
 <kbd> q </kbd>     | save and quit the current buffer. This is the same as (save-buffer) (kill-buffer)
 <kbd> C-w [h \| t \| n \| s] </kbd>     |  move to the up, down, left, or right window.  The syntax [ h \| t \| n \| s ] means that you have to pick either h, t, n, s.  So the only valid commands are C-w h, C-w t, C-w n, C-w s
+<kbd> C-c r </kbd> |  This begins to define an evil macro.  In emacs state the binding for this in C-x (
+<kbd> C-h </kbd>   |  insert a new line below point and switch to insert state
+<kbd> C-t </kbd>   | insert a new line above point and switch to insert state.  The reader should not that this conflicts with the emacs binding of (transpose-chars), which I have rebound to (global-set-key (kbd "C-c t") 'transpose-chars)
+<kbd> spacebar  </kbd>  inserts a space.
+<kbd> \>  </kbd>  | move point to the beginning of the buffer
+<kbd> \<  </kbd>  | move point to the end of the buffer
+<kbd>   </kbd>
+<kbd>   </kbd>
