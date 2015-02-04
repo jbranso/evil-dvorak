@@ -32,12 +32,14 @@ Keybinding         | Description
 <kbd> e </kbd>   | move forward one word
 <kbd> E </kbd>   | move forward one WORD
 <kbd> a </kbd>   | move to the beginning of the line
+<kbd> A </kbd>   | move to the beginning of the line and enter insert mode
 <kbd> u </kbd> | move to the end of the line
+<kbd> U </kbd> | move to the end of the line and enter insert mode
 <kbd> <backspace> </kbd> | ace-jump-mode
-<kbd>  </kbd>     | Like `M-x` but limited to commands that are relevant to the active major mode.
-<kbd></kbd>   | Run `apropos` (search in all Emacs symbols).
-<kbd></kbd> | Display key bindings of current major mode and descriptions of every binding.
-<kbd></kbd>     | Run `hippie-expand` (a replacement for the default `dabbrev-expand`).
+<kbd> i </kbd>     | insert to the left of point
+<kbd> I </kbd>   | insert to the right of point
+<kbd> , </kbd> | undo last command
+<kbd> . </kbd>     | redo last command
 <kbd></kbd> | Open `ibuffer` (a replacement for the default `buffer-list`).
 <kbd></kbd>     | Make the window full screen.
 <kbd></kbd>     | Toggle the Emacs menu bar.
