@@ -48,4 +48,4 @@ Keybinding         | Description
 <kbd> ' KEY </kbd> go to the marked KEY in the buffer
 <kbd> ; </kbd>     | comment-dwin. This is an emacs command that either adds a comment to the current line, or if the line is highlighted, then it comments out the line
 <kbd> q </kbd>     | save and quit the current buffer. This is the same as (save-buffer) (kill-buffer)
-<kbd> C-w [h | t | n | s] </kbd>     |  move to the up, down, left, or right window.  The syntax [ h | t | n | s ] means that you have to pick either h, t, n, s.  So the only valid commands are C-w h, C-w t, C-w n, C-w s
+<kbd> C-w [h \| t \| n \| s] </kbd>     |  move to the up, down, left, or right window.  The syntax [ h \| t \| n \| s ] means that you have to pick either h, t, n, s.  So the only valid commands are C-w h, C-w t, C-w n, C-w s
