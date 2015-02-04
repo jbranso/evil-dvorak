@@ -72,8 +72,15 @@
   (kbd "<backspace>") 'ace-jump-char-mode
   (kbd ";") 'comment-dwim)
 
-;; I don't know how to make use of this map.
-;; (evil-define-key 'replace evil-dvorak-mode-map
+;; I don't like the normal keys that vim users use for up and down, so
+;; I'm if dvorak-funky-h-and-t == 1, then I'll swap h and t.
+(if (equal dvorak-funky-h-and-t 1)
+    (evil-define-key 'normal
+      "t" 'evil-previous-line
+      "h" 'evil-next-line)
+  (evil-define-key 'normal
+    "t" 'evil-previous-line
+    "h" 'evil-next-line))
 
 (evil-define-key 'normal evil-dvorak-mode-map
   "k" 'kill-line
@@ -85,8 +92,6 @@
   (kbd "C-s") 'evil-substitute
   "s" 'evil-forward-char
   "n" 'evil-backward-char
-  "t" 'evil-previous-line
-  "h" 'evil-next-line
   (kbd "C-l") 'recenter-top-bottom
   "l" 'recenter-top-bottom
   "o" 'evil-backward-word-begin
