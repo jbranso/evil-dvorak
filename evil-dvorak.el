@@ -113,7 +113,10 @@
   "e" 'evil-forward-word-begin
   "O" 'evil-backward-WORD-end
   "E" 'evil-forward-WORD-end
-  "j" 'evil-join
+  "J" 'join-line
+  "j" #'(lambda () (interactive)
+          "join this line at the end of the line below"
+          (join-line 1))
   (kbd "C-h") 'evil-open-below
   (kbd "C-t") 'evil-open-above
   (kbd ";") 'comment-dwim

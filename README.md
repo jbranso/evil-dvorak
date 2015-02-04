@@ -35,14 +35,14 @@ Keybinding         | Description
 <kbd> A </kbd>   | move to the beginning of the line and enter insert mode
 <kbd> u </kbd> | move to the end of the line
 <kbd> U </kbd> | move to the end of the line and enter insert mode
-<kbd> <backspace> </kbd> | ace-jump-mode
+<kbd> backspace </kbd> | ace-jump-mode
 <kbd> i </kbd>     | insert to the left of point
 <kbd> I </kbd>   | insert to the right of point
 <kbd> , </kbd> | undo last command
 <kbd> . </kbd>     | redo last command
-<kbd></kbd> | Open `ibuffer` (a replacement for the default `buffer-list`).
-<kbd></kbd>     | Make the window full screen.
-<kbd></kbd>     | Toggle the Emacs menu bar.
+<kbd> $ </kbd> | check the spelling of the current word
+<kbd> l </kbd>     | recenter the buffer (the same as C-l in emacs state)
+<kbd> j </kbd>     | join the lower line to this line
 <kbd></kbd>   | Open Magit's status buffer.
 <kbd></kbd>     | Zap up to char.
 <kbd></kbd> or <kbd>Super-></kbd>   | Switch between buffers with [`ace-jump-buffer`](https://github.com/waymondo/ace-jump-buffer)
