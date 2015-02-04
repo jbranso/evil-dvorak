@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2015 Joshua Branson
 ;; Author: Joshua Branson
-;; Package-Requires: ((evil  "1.0.8"))
+;; Package-Requires: ((evil  "1.0.8") (ace-jump-mode "2.0") (helm "0") (helm-swoop "0") (evil-surround "0") (wind-move "0"))
 ;; Created: January 30 2015
 ;; Keywords:  dvorak evil vim
 ;; Version: 0.1
@@ -56,33 +56,13 @@
   evil-dvorak-mode turn-on-evil-dvorak-mode
   "Global minor mode to emulate surround.vim.")
 
-;; (evil-define-key 'motion evil-dvorak-mode-map "n" 'evil-backward-char
-;;   "s" 'evil-forward-char
-;;   "s" 'evil-forward-char
-;;   "t" 'evil-previous-line
-;;   "h" 'evil-next-line
-;;   "u" 'evil-end-of-line
-;;   "a" 'evil-first-non-blank
-;;   "o" 'evil-backward-word-begin
-;;   "e" 'evil-forward-word-begin)
-
-;; (evil-define-key 'operator evil-dvorak-mode-map "s" 'evil-forward-char
-;;   "n" 'evil-backward-char
-;;   "t" 'evil-previous-line
-;;   "h" 'evil-next-line
-;;   ;;(evil-define-key 'operator "u" 'evil-end-of-line)
-;;   ;;(evil-define-key 'operator "a" 'evil-first-non-blank)
-;;   "o" 'evil-backward-word-begin
-;;   "e" 'evil-forward-word-begin
-;;   "O" 'evil-backward-WORD-end
-;;   "E" 'evil-forward-WORD-end
-;;   (kbd "<backspace>") 'ace-jump-char-mode)
-
-(evil-define-key 'visual evil-dvorak-mode-map "s" 'evil-forward-char
+(evil-define-key 'visual evil-dvorak-mode-map
+  "s" 'evil-forward-char
   "n" 'evil-backward-char
   "t" 'evil-previous-line
   "h" 'evil-next-line
-  ;;I what to be able to use vaw (visual around word)
+  ;;I what to be able to use vaw (visual around word) and viw (visual inner word)
+  ;; that's why in visual mode, u and a are not defined.
   ;;(evil-define-key 'visual "u" 'evil-end-of-line)
   ;;(evil-define-key 'visual "a" 'evil-first-non-blank
   "o" 'evil-backward-word-begin
@@ -139,7 +119,6 @@
   ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
   (kbd "<return>") 'newline
   (kbd "SPC") 'viper-space
-  (kbd "C-a") 'mark-whole-buffer
   (kbd "a") 'evil-first-non-blank
   (kbd "A") 'evil-insert-line
   (kbd "u") 'evil-end-of-line
@@ -151,9 +130,7 @@
   ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
   (kbd "<return>") 'newline
   (kbd "SPC") 'viper-space
-  (kbd "C-a") 'mark-whole-buffer
-  (kbd "C-d") 'delete-char)
-
+  (kbd "C-a") 'mark-whole-buffer)
 
 (evil-define-key 'insert evil-dvorak-mode-map (kbd "C-i") 'info-display-manual
   ;; this should prevent making the escape key moving the cursor backwards but...
@@ -171,7 +148,6 @@
   (kbd "C-n") 'backward-char
   (kbd "C-s") 'forward-char
   (kbd "C-i") 'info-display-manual
-  (kbd "C-z") 'evil-normal-state
   (kbd "C-c r") 'evil-record-macro)
 
 ;; I would like to use these, but they do not work well with golden-ratio-mode
