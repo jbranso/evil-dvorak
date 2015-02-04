@@ -42,9 +42,10 @@ Keybinding         | Description
 <kbd> . </kbd>     | redo last command
 <kbd> $ </kbd> | check the spelling of the current word
 <kbd> l </kbd>     | recenter the buffer (the same as C-l in emacs state)
-<kbd> j </kbd>     | join the lower line to this line
-<kbd></kbd>   | Open Magit's status buffer.
-<kbd></kbd>     | Zap up to char.
-<kbd></kbd> or <kbd>Super-></kbd>   | Switch between buffers with [`ace-jump-buffer`](https://github.com/waymondo/ace-jump-buffer)
-<kbd></kbd>     | Run `expand-region` (incremental text selection).
-<kbd></kbd>     | Run `prelude-move-beginning-of-line`. Read [this](http://emacsredux.com/blog/2013/05/22/smarter-navigation-to-the-beginning-of-a-line/) for details.
+<kbd> j </kbd>     | join the lower line to the end of this line
+<kbd> J </kbd>   | join the current line the end of the previous line
+<kbd> m KEY </kbd>     | mark the current spot in the buffer with KEY
+<kbd> ' KEY </kbd> go to the marked KEY in the buffer
+<kbd> ; </kbd>     | comment-dwin. This is an emacs command that either adds a comment to the current line, or if the line is highlighted, then it comments out the line
+<kbd> q </kbd>     | save and quit the current buffer. This is the same as (save-buffer) (kill-buffer)
+<kbd> C-w [h | t | n | s] </kbd>     |  move to the up, down, left, or right window.  The syntax [ h | t | n | s ] means that you have to pick either h, t, n, s.  So the only valid commands are C-w h, C-w t, C-w n, C-w s
