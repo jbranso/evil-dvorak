@@ -31,10 +31,10 @@ Keybinding         | Description
 <kbd> O </kbd>     | move backward one WORD
 <kbd> e </kbd>   | move forward one word
 <kbd> E </kbd>   | move forward one WORD
-<kbd> a </kbd>   | Start `eshell`.
-<kbd> u </kbd> | Start your default shell.
-<kbd></kbd> | Alias for `M-x`.
-<kbd></kbd>     | Like `M-x` but limited to commands that are relevant to the active major mode.
+<kbd> a </kbd>   | move to the beginning of the line
+<kbd> u </kbd> | move to the end of the line
+<kbd> <backspace> </kbd> | ace-jump-mode
+<kbd>  </kbd>     | Like `M-x` but limited to commands that are relevant to the active major mode.
 <kbd></kbd>   | Run `apropos` (search in all Emacs symbols).
 <kbd></kbd> | Display key bindings of current major mode and descriptions of every binding.
 <kbd></kbd>     | Run `hippie-expand` (a replacement for the default `dabbrev-expand`).
