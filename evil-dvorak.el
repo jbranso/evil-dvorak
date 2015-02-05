@@ -155,7 +155,6 @@
   (kbd "C-i") 'info-display-manual
   (kbd "C-c r") 'evil-record-macro)
 
-
 ;; I would like to use these, but they do not work well with golden-ratio-mode
 ;;(evil-define-key 'emacs (kbd "C-w h") 'evil-window-down)
 ;;(evil-define-key 'emacs (kbd "C-w t") 'evil-window-up)

@@ -11,6 +11,12 @@ see if you want to make the switch.
 You can install evil-dvorak from melpa.
 
 ```
+M-x package-install RET evil-dvorak
+```
+
+Then add this to your emacs config file (init.el).
+
+```
 (require 'evil-dvorak)
 (global-evil-dvorak-mode 1)
 ```
