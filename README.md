@@ -8,13 +8,11 @@ type, your fingers move a good distance between key presses.
 The dvorak keyboard has a different goal in mind.  It puts keys, that are ofter used, side by side.  Do some research for yourself and
 see if you want to make the switch.
 
-To install:
+You can install evil-dvorak from melpa.
 
 ```
-
 (require 'evil-dvorak)
 (global-evil-dvorak-mode 1)
-
 ```
 
 ### Keymap
