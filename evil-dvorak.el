@@ -169,8 +169,11 @@
 (evil-set-initial-state 'snake-mode 'emacs)
 (evil-set-initial-state 'eshell-mode 'emacs)
 (evil-set-initial-state 'term-mode 'emacs)
+;; this one does not seem to be working
+(evil-set-initial-state 'git-timemachine-mode 'emacs)
 ;;This next one is working or not?
 (evil-set-initial-state 'git-mode 'emacs)
+(evil-set-initial-state 'git-commit-mode 'emacs)
 
 (provide 'evil-dvorak)
 
