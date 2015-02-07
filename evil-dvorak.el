@@ -72,13 +72,14 @@
   (kbd "<backspace>") 'ace-jump-char-mode
   (kbd ";") 'comment-dwim)
 
+
 ;; I don't like the normal keys that vim users use for up and down, so
 ;; I'm if dvorak-funky-h-and-t == 1, then I'll swap h and t.
 (if (equal dvorak-funky-h-and-t 1)
-    (evil-define-key 'normal
+    (evil-define-key 'normal evil-dvorak-mode-map
       "t" 'evil-previous-line
       "h" 'evil-next-line)
-  (evil-define-key 'normal
+  (evil-define-key 'normal evil-dvorak-mode-map
     "t" 'evil-previous-line
     "h" 'evil-next-line))
 
