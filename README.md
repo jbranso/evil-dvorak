@@ -79,5 +79,3 @@ Keybinding         | Description
 <kbd> spacebar  </kbd> |  inserts a space.
 <kbd> \>  </kbd>  | move point to the beginning of the buffer
 <kbd> \<  </kbd>  | move point to the end of the buffer
-<kbd>   </kbd>
-<kbd>   </kbd>
