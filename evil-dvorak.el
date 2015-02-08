@@ -75,7 +75,7 @@
 
 ;; I don't like the normal keys that vim users use for up and down, so
 ;; I'm if dvorak-funky-h-and-t == 1, then I'll swap h and t.
-(if (equal dvorak-funky-h-and-t 1)
+(if (equal evil-dvorak-funky-h-and-t 1)
     (evil-define-key 'normal evil-dvorak-mode-map
       "t" 'evil-previous-line
       "h" 'evil-next-line)
@@ -164,6 +164,47 @@
 (define-key evil-emacs-state-map (kbd "C-w t") 'windmove-up)
 (define-key evil-emacs-state-map (kbd "C-w n") 'windmove-left)
 (define-key evil-emacs-state-map (kbd "C-w s") 'windmove-right)
+
+(defun evil-dvorak-turn-on-web-mode-keys ()
+  "This turns on the evil-dvorak web-mode keyboard shortcuts"
+  (interactive)
+  (if (equal evil-dvorak-use-for-web-mode 1)
+      (add-hook 'web-mode-hook '(lambda ()
+                                  "This sets up the keys for web-mode to be used in evil normal state."
+                                  (interactive)
+                                  (evil-define-key evil-normal-state-map
+                                    (kbd "Hta") 'web-mode-tag-attributes-sort
+                                    (kbd "Htb") 'web-mode-tag-beginning
+                                    (kbd "Hte") 'web-mode-tag-end
+                                    (kbd "Htm") 'web-mode-tag-match
+                                    (kbd "Htn") 'web-mode-tag-next
+                                    (kbd "Htp") 'web-mode-tag-previous
+                                    (kbd "Hts") 'web-mode-tag-select
+                                    (kbd "Hek") 'web-mode-element-kill
+                                    (kbd "Hev") 'web-mode-element-vanish
+                                    (kbd "Hea") 'web-mode-element-content-select
+                                    (kbd "Hec") 'web-mode-element-clone
+                                    (kbd "Heb") 'web-mode-element-beginning
+                                    (kbd "Hed") 'web-mode-element-child
+                                    (kbd "Hee") 'web-mode-element-end
+                                    (kbd "Hef") 'web-mode-element-children-fold-or-unfold
+                                    (kbd "Hei") 'web-mode-element-insert
+                                    (kbd "Hem") 'web-mode-element-mute-blanks
+                                    (kbd "Hen") 'web-mode-element-next
+                                    (kbd "Hep") 'web-mode-element-previous
+                                    (kbd "Her") 'web-mode-element-rename
+                                    (kbd "Hes") 'web-mode-element-select
+                                    (kbd "Het") 'web-mode-element-transpose
+                                    (kbd "Heu") 'web-mode-element-parent
+                                    (kbd "Hew") 'web-mode-element-wrap
+                                    (kbd "Hab") 'web-mode-attribute-beginning
+                                    (kbd "Hae") 'web-mode-attribute-end
+                                    (kbd "Hai") 'web-mode-attribute-insert
+                                    (kbd "Hak") 'web-mode-attribute-kill
+                                    (kbd "Han") 'web-mode-attribute-next
+                                    (kbd "Has") 'web-mode-attribute-select
+                                    (kbd "Hat") 'web-mode-attribute-transpose)))))
+
 
 ;; Set the default state for various buffers
 (evil-set-initial-state 'dired-mode 'emacs)
