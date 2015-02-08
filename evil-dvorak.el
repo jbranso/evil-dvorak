@@ -165,49 +165,54 @@
 (define-key evil-emacs-state-map (kbd "C-w n") 'windmove-left)
 (define-key evil-emacs-state-map (kbd "C-w s") 'windmove-right)
 
-(defun evil-dvorak-turn-on-web-mode-keys ()
-  "This turns on the evil-dvorak web-mode keyboard shortcuts"
+(defun evil-dvorak-turn-off-web-mode-key ()
+  "This turns off the evil-dvorak web-mod keyboard shortcuts."
   (interactive)
-  (if (equal evil-dvorak-use-for-web-mode 1)
-      (add-hook 'web-mode-hook '(lambda ()
-                                  "This sets up the keys for web-mode to be used in evil normal state."
-                                  (interactive)
-                                  (evil-define-key evil-normal-state-map
-                                    (kbd "Hta") 'web-mode-tag-attributes-sort
-                                    (kbd "Htb") 'web-mode-tag-beginning
-                                    (kbd "Hte") 'web-mode-tag-end
-                                    (kbd "Htm") 'web-mode-tag-match
-                                    (kbd "Htn") 'web-mode-tag-next
-                                    (kbd "Htp") 'web-mode-tag-previous
-                                    (kbd "Hts") 'web-mode-tag-select
-                                    (kbd "Hek") 'web-mode-element-kill
-                                    (kbd "Hev") 'web-mode-element-vanish
-                                    (kbd "Hea") 'web-mode-element-content-select
-                                    (kbd "Hec") 'web-mode-element-clone
-                                    (kbd "Heb") 'web-mode-element-beginning
-                                    (kbd "Hed") 'web-mode-element-child
-                                    (kbd "Hee") 'web-mode-element-end
-                                    (kbd "Hef") 'web-mode-element-children-fold-or-unfold
-                                    (kbd "Hei") 'web-mode-element-insert
-                                    (kbd "Hem") 'web-mode-element-mute-blanks
-                                    (kbd "Hen") 'web-mode-element-next
-                                    (kbd "Hep") 'web-mode-element-previous
-                                    (kbd "Her") 'web-mode-element-rename
-                                    (kbd "Hes") 'web-mode-element-select
-                                    (kbd "Het") 'web-mode-element-transpose
-                                    (kbd "Heu") 'web-mode-element-parent
-                                    (kbd "Hew") 'web-mode-element-wrap
-                                    (kbd "Hab") 'web-mode-attribute-beginning
-                                    (kbd "Hae") 'web-mode-attribute-end
-                                    (kbd "Hai") 'web-mode-attribute-insert
-                                    (kbd "Hak") 'web-mode-attribute-kill
-                                    (kbd "Han") 'web-mode-attribute-next
-                                    (kbd "Has") 'web-mode-attribute-select
-                                    (kbd "Hat") 'web-mode-attribute-transpose)))))
+  (remove-hook 'web-mode-hook 'evil-dvorak-turn-on-web-mode-keys))
+
+(defun evil-dvorak-turn-on-web-mode-keys ()
+  "This turns on the evil-dvorak web-mode keyboard shortcuts."
+  (interactive)
+  (define-key evil-normal-state-map
+    (kbd "Hta") 'web-mode-tag-attributes-sort
+    (kbd "Htb") 'web-mode-tag-beginning
+    (kbd "Hte") 'web-mode-tag-end
+    (kbd "Htm") 'web-mode-tag-match
+    (kbd "Htn") 'web-mode-tag-next
+    (kbd "Htp") 'web-mode-tag-previous
+    (kbd "Hts") 'web-mode-tag-select
+    (kbd "Hek") 'web-mode-element-kill
+    (kbd "Hev") 'web-mode-element-vanish
+    (kbd "Hea") 'web-mode-element-content-select
+    (kbd "Hec") 'web-mode-element-clone
+    (kbd "Heb") 'web-mode-element-beginning
+    (kbd "Hed") 'web-mode-element-child
+    (kbd "Hee") 'web-mode-element-end
+    (kbd "Hef") 'web-mode-element-children-fold-or-unfold
+    (kbd "Hei") 'web-mode-element-insert
+    (kbd "Hem") 'web-mode-element-mute-blanks
+    (kbd "Hen") 'web-mode-element-next
+    (kbd "Hep") 'web-mode-element-previous
+    (kbd "Her") 'web-mode-element-rename
+    (kbd "Hes") 'web-mode-element-select
+    (kbd "Het") 'web-mode-element-transpose
+    (kbd "Heu") 'web-mode-element-parent
+    (kbd "Hew") 'web-mode-element-wrap
+    (kbd "Hab") 'web-mode-attribute-beginning
+    (kbd "Hae") 'web-mode-attribute-end
+    (kbd "Hai") 'web-mode-attribute-insert
+    (kbd "Hak") 'web-mode-attribute-kill
+    (kbd "Han") 'web-mode-attribute-next
+    (kbd "Has") 'web-mode-attribute-select
+    (kbd "Hat") 'web-mode-attribute-transpose))
+
+(if (equal evil-dvorak-use-for-web-mode 1)
+    (add-hook 'web-mode-hook 'evil-dvorak-turn-on-web-mode-keys))
 
 
-;; Set the default state for various buffers
-(evil-set-initial-state 'dired-mode 'emacs)
+
+    ;; Set the default state for various buffers
+    (evil-set-initial-state 'dired-mode 'emacs)
 (evil-set-initial-state 'snake-mode 'emacs)
 (evil-set-initial-state 'eshell-mode 'emacs)
 (evil-set-initial-state 'term-mode 'emacs)
