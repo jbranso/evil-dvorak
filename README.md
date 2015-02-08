@@ -21,6 +21,26 @@ Then add this to your emacs config file (init.el).
 (global-evil-dvorak-mode 1)
 ```
 
+### Configuration
+
+I like evil-next-line and evil-previous-line to be bound to h and t respectively, which is NOT how vim does it.  If you wish to try my
+alternative to vim's layout, write this in your config.
+
+```
+(setq evil-dvorak-funky-h-and-t 1)
+(require 'evil-dvorak)
+(global-evil-dvorak-mode 1)
+```
+
+Evil-dvorak also provide you with a way to use web-mode keys with the prefix key: "H".  So "Hak" kills the current attribute and "Hev"
+vanishes the current html element.  If you would like to use this, set up evil-dvorak like this:
+
+```
+(setq evil-dvorak-use-for-web-mode 1)
+(require 'evil-dvorak)
+(global-evil-dvorak-mode 1)
+```
+
 ### Keymap
 
 #### In normal mode
