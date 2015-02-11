@@ -212,16 +212,10 @@
     (add-hook 'web-mode-hook 'evil-dvorak-turn-on-web-mode-keys)
   (remove-hook 'web-mode-hook 'evil-dvorak-turn-on-web-mode-keys))
 
+;; I should not set the initial state for various modes, because some evil
+;; users might want dired to be loaded in evil-normal-state.
 ;; Set the default state for various buffers
-(evil-set-initial-state 'dired-mode 'emacs)
-(evil-set-initial-state 'snake-mode 'emacs)
-(evil-set-initial-state 'eshell-mode 'emacs)
-(evil-set-initial-state 'term-mode 'emacs)
-;; this one does not seem to be working
-(evil-set-initial-state 'git-timemachine-mode 'emacs)
-;;This next one is working or not?
-(evil-set-initial-state 'git-mode 'emacs)
-(evil-set-initial-state 'git-commit-mode 'emacs)
+;; (evil-set-initial-state 'dired-mode 'emacs)
 
 (provide 'evil-dvorak)
 
