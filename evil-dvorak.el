@@ -109,10 +109,10 @@
   (kbd "C-t") 'evil-open-above
   (kbd ";") 'comment-dwim
   (kbd "C-c r") 'evil-record-macro
-  (kbd "C-w h") 'windmove-down
-  (kbd "C-w t") 'windmove-up
-  (kbd "C-w n") 'windmove-left
-  (kbd "C-w s") 'windmove-right
+  ;; (kbd "C-w h") 'windmove-down
+  ;; (kbd "C-w t") 'windmove-up
+  ;; (kbd "C-w n") 'windmove-left
+  ;; (kbd "C-w s") 'windmove-right
   "," 'undo-tree-undo
   "/" 'helm-swoop
   "'" 'evil-goto-mark
@@ -139,6 +139,7 @@
   (kbd "<return>") 'newline
   (kbd "SPC") 'viper-space
   (kbd "C-a") 'mark-whole-buffer)
+
 
 (evil-define-key 'insert evil-dvorak-mode-map (kbd "C-i") 'info-display-manual
   ;; this should prevent making the escape key moving the cursor backwards but...
