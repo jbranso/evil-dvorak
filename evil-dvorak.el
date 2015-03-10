@@ -70,8 +70,7 @@
   "O" 'evil-backward-WORD-end
   "E" 'evil-forward-WORD-end
   (kbd "<backspace>") 'ace-jump-char-mode
-  (kbd ";") 'comment-dwim)
-
+  (kbd ";") 'endless/comment-line)
 
 ;; I don't like the normal keys that vim users use for up and down, so
 ;; I'm if dvorak-funky-h-and-t == 1, then I'll swap h and t.
