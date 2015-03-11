@@ -117,7 +117,6 @@ With negative prefix, apply to -N lines above."
           (join-line 1))
   (kbd "C-h") 'evil-open-below
   (kbd "C-t") 'evil-open-above
-  (kbd ";") 'comment-dwim
   (kbd "C-c r") 'evil-record-macro
   ;; (kbd "C-w h") 'windmove-down
   ;; (kbd "C-w t") 'windmove-up
