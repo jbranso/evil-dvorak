@@ -102,6 +102,7 @@ With negative prefix, apply to -N lines above."
           (kill-line 0))
   (kbd "I") 'evil-append
   "$" 'ispell-word
+  ";" 'endless/comment-line
   (kbd "C-s") 'evil-substitute
   "s" 'evil-forward-char
   "n" 'evil-backward-char
