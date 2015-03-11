@@ -81,7 +81,7 @@ With negative prefix, apply to -N lines above."
   "O" 'evil-backward-WORD-end
   "E" 'evil-forward-WORD-end
   (kbd "<backspace>") 'ace-jump-char-mode
-  (kbd ";") 'endless/comment-line)
+  (kbd ";") 'comment-dwim)
 
 ;; I don't like the normal keys that vim users use for up and down, so
 ;; I'm if dvorak-funky-h-and-t == 1, then I'll swap h and t.
@@ -100,7 +100,7 @@ With negative prefix, apply to -N lines above."
   "K" #'(lambda () (interactive)
           "kill from point to the beginning of the line"
           (kill-line 0))
-  (kbd "I") 'evil-append
+  "I" 'evil-append
   "$" 'ispell-word
   ";" 'endless/comment-line
   (kbd "C-s") 'evil-substitute
