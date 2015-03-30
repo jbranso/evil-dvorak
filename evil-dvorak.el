@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2015 Joshua Branson
 ;; Author: Joshua Branson
-;; Package-Requires: ((evil  "1.0.8") (ace-jump-mode "2.0") (helm "0") (helm-swoop "0") (evil-surround "0") (wind-move "0"))
+;; Package-Requires: ((evil  "1.0.8") (ace-jump-mode "2.0") (anzu "0") (helm "0") (helm-swoop "0") (evil-surround "0") (wind-move "0"))
 ;; Created: January 30 2015
 ;; Keywords:  dvorak evil vim
 ;; Version: 0.1
@@ -126,7 +126,7 @@ With negative prefix, apply to -N lines above."
   "," 'undo-tree-undo
   "/" 'helm-swoop
   "'" 'evil-goto-mark
-  "Q" 'query-replace
+  "Q" 'anzu-query-replace-regexp
   (kbd "q") '(lambda ()
                "q saves the current buffer, then kills it.  I should add a checking mechanism... If the buffer name starts and ends with *, then do not save the buffer"
                (interactive)
