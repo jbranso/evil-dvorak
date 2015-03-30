@@ -135,7 +135,8 @@ With negative prefix, apply to -N lines above."
   (kbd "<backspace>") 'ace-jump-char-mode
   (kbd "l") 'recenter-top-bottom
   ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
-  (kbd "<return>") 'newline
+  ;;at least so the documentation claimed
+  (kbd "<return>") 'newline-and-indent
   (kbd "SPC") 'viper-space
   (kbd "a") 'evil-first-non-blank
   (kbd "A") 'evil-insert-line
@@ -146,7 +147,7 @@ With negative prefix, apply to -N lines above."
   (kbd ">") 'end-of-buffer
   (kbd "l") 'recenter-top-bottom
   ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
-  (kbd "<return>") 'newline
+  (kbd "<return>") 'newline-and-indent
   (kbd "SPC") 'viper-space
   (kbd "C-a") 'mark-whole-buffer)
 
