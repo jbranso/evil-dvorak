@@ -61,17 +61,21 @@
 With positive prefix, apply to N lines including current one.
 With negative prefix, apply to -N lines above."
   (interactive "p")
-  (comment-or-uncomment-region
-   (line-beginning-position)
-   (goto-char (line-end-position n)))
-  (forward-line 1)
-  (back-to-indentation))
+  ;;if we are in web-mode, use comment-or-uncomment
+  (if (eq major-mode 'web-mode)
+      (web-mode-comment-or-uncomment)
+    (comment-or-uncomment-region)
+    (line-beginning-position)
+    (goto-char (line-end-position n))
+    (forward-line 1)
+    (back-to-indentation)))
 
 (evil-define-key 'visual evil-dvorak-mode-map
   "s" 'evil-forward-char
   "n" 'evil-backward-char
   "t" 'evil-previous-line
   "h" 'evil-next-line
+  ";" 'endless/comment-line
   ;;I what to be able to use vaw (visual around word) and viw (visual inner word)
   ;; that's why in visual mode, u and a are not defined.
   ;;(evil-define-key 'visual "u" 'evil-end-of-line)
@@ -81,7 +85,8 @@ With negative prefix, apply to -N lines above."
   "O" 'evil-backward-WORD-end
   "E" 'evil-forward-WORD-end
   (kbd "<backspace>") 'ace-jump-char-mode
-  (kbd ";") 'comment-dwim)
+  ;;(kbd ";") 'comment-dwim
+  )
 
 ;; I don't like the normal keys that vim users use for up and down, so
 ;; I'm if dvorak-funky-h-and-t == 1, then I'll swap h and t.
