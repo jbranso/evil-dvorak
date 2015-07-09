@@ -101,6 +101,29 @@ With negative prefix, apply to -N lines above."
     "h" 'evil-next-line))
 
 (evil-define-key 'normal evil-dvorak-mode-map
+
+  (kbd "TAB") #'indent-for-tab-command
+  (kbd "s-z") #'evil-emacs-state
+  (kbd "s-l") #'org-link
+  (kbd "s-z") #'evil-normal-state
+  (kbd "C-w h") #'windmove-down
+  (kbd "C-w t") #'windmove-up
+  (kbd "b") #'(lambda ()
+                "Switch to the previous buffer"
+                (interactive)
+                (switch-to-buffer nil))
+  "B" #'(lambda ()
+          "display all possible buffers and pick the one you want"
+          (interactive)
+          (list-buffers))
+  ;;(define-key evil-normal-state-map (kbd "Q") 'anzu-query-replace-regexp)
+  ;; This for when I use visual line mode mode. Now visual line mode should work for basic
+  ;; key movements
+  ;; This is not working.
+  (kbd "h") #'next-line
+  (kbd "t") #'previous-line
+  (kbd "n") #'backward-char
+  (kbd "l") #'forward-char
   "k" 'kill-line
   "K" #'(lambda () (interactive)
           "kill from point to the beginning of the line"
