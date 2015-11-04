@@ -54,7 +54,7 @@
 
 (define-globalized-minor-mode global-evil-dvorak-mode
   evil-dvorak-mode turn-on-evil-dvorak-mode
-  "Global minor mode to emulate surround.vim.")
+  "Global mode to let you use evil with dvorak friendly keybindings.")
 
 (defun endless/comment-line (n)
   "Comment or uncomment current line and leave point after it.
@@ -84,12 +84,12 @@ With negative prefix, apply to -N lines above."
   "e" 'evil-forward-word-begin
   "O" 'evil-backward-WORD-end
   "E" 'evil-forward-WORD-end
-  (kbd "<backspace>") 'ace-jump-char-mode
+  (kbd "<backspace>") 'avy-goto-char
   ;;(kbd ";") 'comment-dwim
   )
 
 ;; I don't like the normal keys that vim users use for up and down, so
-;; I'm if dvorak-funky-h-and-t == 1, then I'll swap h and t.
+;; if dvorak-funky-h-and-t == 1, then I'll swap h and t.
 (defvar evil-dvorak-funky-h-and-t)
 (defvar evil-dvorak-use-for-web-mode)
 (if (equal evil-dvorak-funky-h-and-t 1)
@@ -101,11 +101,9 @@ With negative prefix, apply to -N lines above."
     "h" 'evil-next-line))
 
 (evil-define-key 'normal evil-dvorak-mode-map
-
   (kbd "TAB") #'indent-for-tab-command
   (kbd "s-z") #'evil-emacs-state
   (kbd "s-l") #'org-link
-  (kbd "s-z") #'evil-normal-state
   (kbd "C-w h") #'windmove-down
   (kbd "C-w t") #'windmove-up
   (kbd "b") #'(lambda ()
@@ -160,7 +158,7 @@ With negative prefix, apply to -N lines above."
                (interactive)
                (save-buffer)
                (let (kill-buffer-query-functions) (kill-buffer)))
-  (kbd "<backspace>") 'ace-jump-char-mode
+  (kbd "<backspace>") 'avy-goto-char
   (kbd "l") 'recenter-top-bottom
   ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
   ;;at least so the documentation claimed
@@ -197,15 +195,6 @@ With negative prefix, apply to -N lines above."
   (kbd "C-s") 'forward-char
   (kbd "C-i") 'info-display-manual
   (kbd "C-c r") 'evil-record-macro)
-
-;; I would like to use these, but they do not work well with golden-ratio-mode
-;;(evil-define-key 'emacs (kbd "C-w h") 'evil-window-down)
-;;(evil-define-key 'emacs (kbd "C-w t") 'evil-window-up)
-;;(evil-define-key 'emacs (kbd "C-w n") 'evil-window-left)
-(define-key evil-emacs-state-map (kbd "C-w h") 'windmove-down)
-(define-key evil-emacs-state-map (kbd "C-w t") 'windmove-up)
-(define-key evil-emacs-state-map (kbd "C-w n") 'windmove-left)
-(define-key evil-emacs-state-map (kbd "C-w s") 'windmove-right)
 
 (defun evil-dvorak-turn-off-web-mode-key ()
   "This turns off the evil-dvorak web-mod keyboard shortcuts."
@@ -255,7 +244,6 @@ With negative prefix, apply to -N lines above."
 ;; I should not set the initial state for various modes, because some evil
 ;; users might want dired to be loaded in evil-normal-state.
 ;; Set the default state for various buffers
-;; (evil-set-initial-state 'dired-mode 'emacs)
 
 (provide 'evil-dvorak)
 
