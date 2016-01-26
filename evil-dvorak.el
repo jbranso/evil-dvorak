@@ -75,7 +75,6 @@ With negative prefix, apply to -N lines above."
   "n" 'evil-backward-char
   "t" 'evil-previous-line
   "h" 'evil-next-line
-  ";" 'endless/comment-line
   ;;I what to be able to use vaw (visual around word) and viw (visual inner word)
   ;; that's why in visual mode, u and a are not defined.
   ;;(evil-define-key 'visual "u" 'evil-end-of-line)
@@ -85,7 +84,6 @@ With negative prefix, apply to -N lines above."
   "O" 'evil-backward-WORD-end
   "E" 'evil-forward-WORD-end
   (kbd "<backspace>") 'avy-goto-char
-  ;;(kbd ";") 'comment-dwim
   )
 
 ;; I don't like the normal keys that vim users use for up and down, so
@@ -118,7 +116,7 @@ With negative prefix, apply to -N lines above."
   ;; This for when I use visual line mode mode. Now visual line mode should work for basic
   ;; key movements
   ;; This is not working.
-  (kbd "h") #'next-line
+  (kbd "h") #'evil-next-line
   (kbd "t") #'previous-line
   (kbd "n") #'backward-char
   (kbd "l") #'forward-char
@@ -128,7 +126,6 @@ With negative prefix, apply to -N lines above."
           (kill-line 0))
   "I" 'evil-append
   "$" 'ispell-word
-  ";" 'endless/comment-line
   (kbd "C-s") 'evil-substitute
   "s" 'evil-forward-char
   "n" 'evil-backward-char
@@ -189,7 +186,7 @@ With negative prefix, apply to -N lines above."
   (kbd "C-d") 'delete-char
   (kbd "<backspace>") 'delete-backward-char
   (kbd "<return>") 'newline-and-indent
-  (kbd "C-h") 'next-line
+  (kbd "C-h") 'evil-next-line
   (kbd "C-t") 'previous-line
   (kbd "C-n") 'backward-char
   (kbd "C-s") 'forward-char
