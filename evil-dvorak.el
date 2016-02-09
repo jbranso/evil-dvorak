@@ -173,7 +173,7 @@
   (kbd "<backspace>") 'delete-backward-char
   (kbd "<return>") 'newline-and-indent
   (kbd "C-h") 'evil-next-line
-  (kbd "C-t") 'previous-line
+  (kbd "C-t") 'evil-previous-line
   (kbd "C-n") 'backward-char
   (kbd "C-s") 'forward-char
   (kbd "C-i") 'info-display-manual
