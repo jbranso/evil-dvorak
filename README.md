@@ -6,7 +6,7 @@ keyboard layout was designed.  It's design goal is to spead out keys that are li
 type, your fingers move a good distance between key presses.
 
 The dvorak keyboard has a different goal in mind.  It puts keys, that are ofter used, side by side.  Do some research for yourself and
-see if you want to make the switch.
+see if you want to make the switch.  Please note that at this time evil-dvorak does not intend to provide the exact same editing environment that you might expect.  For example, I do not like the default vim command for "Q", "<", ">", etc.  So I've rebound "Q" to (anzu-query-replace-regexp), "<" to (beginning-of-buffer), and ">" to (end-of-buffer).
 
 You can install evil-dvorak from melpa.
 
@@ -19,6 +19,21 @@ Then add this to your emacs config file (init.el).
 ```
 (require 'evil-dvorak)
 (global-evil-dvorak-mode 1)
+```
+
+Or if you prefer use-package, like me, then you can install evil-dvorak like so
+```
+(use-package evil
+  :ensure t
+  ;;If you diminish undo-tree mode, then you diminish evil-mode
+  ;; I see the evil thing in the mode line on an org buffer, BUT not in an emacs lisp buffer
+  :diminish undo-tree-mode
+  :config (evil-mode 1))
+
+(use-package evil-dvorak
+  :ensure t
+  :config (global-evil-dvorak-mode 1)
+  :diminish evil-dvorak-mode)
 ```
 
 ### Configuration
