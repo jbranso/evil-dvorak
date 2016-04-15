@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2015 Joshua Branson
 ;; Author: Joshua Branson
-;; Package-Requires: ((evil  "1.0.8") (ace-jump-mode "2.0") (anzu "0") (helm "0") (helm-swoop "0") (evil-surround "0") (wind-move "0"))
+;; Package-Requires: ((evil  "1.0.8") (ace-jump-mode "2.0") (anzu "0") (helm "0") (evil-surround "0") (wind-move "0"))
 ;; Created: January 30 2015
 ;; Keywords:  dvorak evil vim
 ;; Version: 0.1
@@ -94,12 +94,16 @@
           (kill-line 0))
   "I" 'evil-append
   "$" 'ispell-word
+
+  ;;move the cursor around
   (kbd "C-l") 'recenter-top-bottom
   "l" 'recenter-top-bottom
   "o" 'evil-backward-word-begin
   "e" 'evil-forward-word-begin
   "O" 'evil-backward-WORD-end
   "E" 'evil-forward-WORD-end
+
+  ;;line manipulation
   "J" 'join-line
   "j" #'(lambda () (interactive)
           "join this line at the end of the line below"
@@ -112,6 +116,13 @@
   (kbd "<backspace>") 'avy-goto-char
   ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
   (kbd "<return>") 'newline-and-indent
+
+  ;;moving on the line
+  (kbd "a") 'evil-first-non-blank
+  (kbd "A") 'evil-insert-line
+  (kbd "u") 'evil-end-of-line
+  (kbd "U") 'evil-append-line
+
   )
 
 
