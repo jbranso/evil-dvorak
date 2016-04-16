@@ -65,10 +65,6 @@
   ;; that's why in visual mode, u and a are not defined.
   ;;(evil-define-key 'visual "u" 'evil-end-of-line)
   ;;(evil-define-key 'visual "a" 'evil-first-non-blank
-  "o" 'evil-backward-word-begin
-  "e" 'evil-forward-word-begin
-  "O" 'evil-backward-WORD-end
-  "E" 'evil-forward-WORD-end
   (kbd "<backspace>") 'avy-goto-char)
 
 (evil-define-key 'normal evil-dvorak-mode-map
@@ -111,12 +107,9 @@
   (kbd "a") 'evil-first-non-blank
   (kbd "A") 'evil-insert-line
   (kbd "u") 'evil-end-of-line
-  (kbd "U") 'evil-append-line
+  (kbd "U") 'evil-append-line)
 
-  )
-
-
-(evil-define-key 'insert
+(evil-define-key 'insert evil-dvorak-mode-map
   (kbd "C-z") 'evil-normal-state
   (kbd "ESC") 'evil-normal-state
   (kbd "C-d") 'delete-char
@@ -127,10 +120,6 @@
   (kbd "C-n") 'backward-char
   (kbd "C-s") 'forward-char
   (kbd "C-c r") 'evil-record-macro)
-
-;; I should not set the initial state for various modes, because some evil
-;; users might want dired to be loaded in evil-normal-state.
-;; Set the default state for various buffers
 
 (provide 'evil-dvorak)
 
