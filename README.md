@@ -38,23 +38,38 @@ Or if you prefer use-package, like me, then you can install evil-dvorak like so
 
 ### Configuration
 
-I like evil-next-line and evil-previous-line to be bound to h and t respectively, which is NOT how vim does it.  If you wish to try my
-alternative to vim's layout, write this in your config.
+One can easily rebind keys in evil dvorak.  Suppose you wish to bind "l" in normal state to (recenter-top-bottom) and "Q" to
+(anzu-query-replace-regexp).  In insert state you wish to bind "C-d" to (delete-char), and "C-z" to (evil-normal-state). In visual
+state you wish to bind "o" (evil-backward-word-begin) and "e" to (evil-forward-word-begin).  You should just modify evil-dvorak's mode map like so:
 
 ```
-(setq evil-dvorak-funky-h-and-t 1)
-(require 'evil-dvorak)
-(global-evil-dvorak-mode 1)
+(defun my-evil-dvorak-customizations ()
+  "These are the non-standard customizations, that I've done to my evil-dvorak.
+  These are my various changes that I initially had in evil-dvorak, but I'm removing them to help out the spacemacs devs."
+  (interactive)
+  ;;normal mode customizations
+  (evil-define-key 'normal evil-dvorak-mode-map
+    (kbd "l") 'recenter-top-bottom
+    (kbd "Q") 'anzu-query-replace-regexp)
+
+  ;;insert mode customizations
+  (evil-define-key 'insert evil-dvorak-mode-map
+    (kbd "C-d") 'delete-char
+    (kbd "C-z") 'evil-normal-state)
+
+  (evil-define-key 'visual evil-dvorak-mode-map
+    (kbd "o") 'evil-backward-word-begin
+    (kbd "e") 'evil-forward-word-begin))
+
+
+(use-package evil-dvorak
+  :ensure t
+  :config
+  (global-evil-dvorak-mode 1)
+  (my-evil-dvorak-customizations))
+
 ```
 
-Evil-dvorak also provide you with a way to use web-mode keys with the prefix key: "H".  So "Hak" kills the current attribute and "Hev"
-vanishes the current html element.  If you would like to use this, set up evil-dvorak like this:
-
-```
-(setq evil-dvorak-use-for-web-mode 1)
-(require 'evil-dvorak)
-(global-evil-dvorak-mode 1)
-```
 
 ### Keymap
 
