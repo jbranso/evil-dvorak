@@ -5,7 +5,7 @@
 ;; Package-Requires: ((evil  "1.0.8") (ace-jump-mode "2.0") (anzu "0") (helm "0") (evil-surround "0") (wind-move "0"))
 ;; Created: January 30 2015
 ;; Keywords:  dvorak evil vim
-;; Version: 0.1
+;; Version: 0.2
 
 ;; This file is not part of GNU Emacs.
 
@@ -57,10 +57,10 @@
   "Global mode to let you use evil with dvorak friendly keybindings.")
 
 (evil-define-key 'visual evil-dvorak-mode-map
-  "s" 'evil-forward-char
+  "t" 'evil-next-line
+  "h" 'evil-previous-line
   "n" 'evil-backward-char
-  "t" 'evil-previous-line
-  "h" 'evil-next-line
+  "s" 'evil-forward-char
   ;;I what to be able to use vaw (visual around word) and viw (visual inner word)
   ;; that's why in visual mode, u and a are not defined.
   ;;(evil-define-key 'visual "u" 'evil-end-of-line)
@@ -71,23 +71,13 @@
   "E" 'evil-forward-WORD-end
   (kbd "<backspace>") 'avy-goto-char)
 
-;; I don't like the normal keys that vim users use for up and down, so
-;; if dvorak-funky-h-and-t == 1, then I'll swap h and t.
-
 (evil-define-key 'normal evil-dvorak-mode-map
-  (kbd "TAB") #'indent-for-tab-command
-  (kbd "s-z") #'evil-emacs-state
+  ;; Miscellancus
   (kbd "s-l") #'org-link
-  (kbd "C-w h") #'windmove-down
-  (kbd "C-w t") #'windmove-up
-  (kbd "b") #'(lambda ()
-                "Switch to the previous buffer"
-                (interactive)
-                (switch-to-buffer nil))
-  (kbd "h") #'evil-next-line
-  (kbd "t") #'previous-line
+  (kbd "t") #'evil-next-line
+  (kbd "h") #'previous-line
   (kbd "n") #'backward-char
-  (kbd "l") #'forward-char
+  (kbd "s") #'forward-char
   "k" 'kill-line
   "K" #'(lambda () (interactive)
           "kill from point to the beginning of the line"
@@ -127,11 +117,6 @@
 
 
 (evil-define-key 'insert
-  ;; this should prevent making the escape key moving the cursor backwards but...
-  ;; (evil-define-key viper-insert-global-user-map
-  ;;   (kbd "ESC") '(lambda()
-  ;;               (viper-intercept-ESC-key)
-  ;;               (forward-char)))
   (kbd "C-z") 'evil-normal-state
   (kbd "ESC") 'evil-normal-state
   (kbd "C-d") 'delete-char
