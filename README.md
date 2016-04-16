@@ -1,17 +1,19 @@
 With evil-dvorak you can use emacs's evil mode with bindings, that are friendly to the dvorak keyboard.  (If your keyboard in the top
 left reads "qwerty", then you are using the qwerty keyboard). Why would you want to use the dvorak keyboard instead of qwerty?
 Because the qwerty layout is an outdated keyboard layout.  It was designed for typewriters.  In those days, if you pressed two keys
-together too soon, the keys would very likely stick together.  To decrease the chance of keys getting stuck while typing, the qwerty
+together too soon, the keys would very likely stick together.  To decrease the chance of keys getting stuck whilst typing, the qwerty
 keyboard layout was designed.  It's design goal is to spead out keys that are likely to be pressed often.  This means that when you
 type, your fingers move a good distance between key presses.
 
 The dvorak keyboard has a different goal in mind.  It puts keys, that are often used, side by side.  Do some research for yourself
-and see if you want to make the switch.  Please note that at this time evil-dvorak does not intend to provide the exact same
-editing environment that you might expect.  For example, I do not like the default vim command for "Q", "<", ">", etc.  So I've
-rebound "Q" to (anzu-query-replace-regexp), "<" to (beginning-of-buffer), and ">" to (end-of-buffer).  However, I've been
-contacted by the some of the spacemacs devs, who are considering providing an evil-dvorak layer for spacemacs.  It may or may not
-use my codebase, but they've convinced me to modify evil-dvorak so that it depends on less packages and emulates more of a default vim
-layout.
+and see if you want to make the switch.
+
+Also, you might ask, why would someone want to have a vim experience inside emacs?  Because vim's modal editing experience is pretty
+awesome!  You can learn more about how to efficiently learn vim here: http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html
+
+I have recently reworked much of evil-dvorak to require only evil.  The only keys that I have changed the default keybindings are
+ "h", "t", "n", "s", "k", "K", "j", "J", which you can find more details below.
+
 
 You can install evil-dvorak from melpa.
 
@@ -85,17 +87,9 @@ Keybinding             | Description
 <kbd> t </kbd>         | move the cursor one line down
 <kbd> n </kbd>         | move the cursor one character to the left
 <kbd> s </kbd>         | move the cursor one character to the right
-<kbd> a </kbd>         | move to the beginning of the line
-<kbd> backspace </kbd> | ace-jump-mode
 <kbd> k </kbd>         | kill from point to the end of the line
 <kbd> K </kbd>         | kill from point to the beginning of the line
-<kbd> u </kbd>         | undo last command
-<kbd> C-r </kbd>       | redo last command
 <kbd> j </kbd>         | join the lower line to the end of this line
 <kbd> J </kbd>         | join the current line the end of the previous line
-<kbd> C-w [h \         | t \| n \| s] </kbd>     |  move to the up, down, left, or right window.  The syntax [ h \| t \| n \| s ] means that you have to pick either h, t, n, s.  So the only valid commands are C-w h, C-w t, C-w n, C-w s
 <kbd> C-h </kbd>       |  insert a new line below point and switch to insert state
-<kbd> C-t </kbd>       | insert a new line above point and switch to insert state.  The reader should not that this conflicts with the emacs binding of (transpose-chars), which I have rebound to (global-set-key (kbd "C-c t") 'transpose-chars)
-<kbd> spacebar  </kbd> |  inserts a space.
-<kbd> \>  </kbd>       | move point to the beginning of the buffer
-<kbd> \<  </kbd>       | move point to the end of the buffer
+<kbd> C-t </kbd>       | insert a new line above point and switch to insert state.  The reader should not that this conflicts with the emacs binding of (transpose-chars), which I have personally rebound to (global-set-key (kbd "C-c t") 'transpose-chars)
