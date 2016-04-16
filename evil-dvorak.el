@@ -1,4 +1,4 @@
-;;; evil-dvorak.el  ---  allows you to use evil with appropriate dvorak bindings
+;;; evil-dvorak.el --- allows you to use evil with appropriate dvorak bindings
 
 ;; Copyright (C) 2015 Joshua Branson
 ;; Author: Joshua Branson
