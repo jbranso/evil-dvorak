@@ -5,8 +5,13 @@ together too soon, the keys would very likely stick together.  To decrease the c
 keyboard layout was designed.  It's design goal is to spead out keys that are likely to be pressed often.  This means that when you
 type, your fingers move a good distance between key presses.
 
-The dvorak keyboard has a different goal in mind.  It puts keys, that are ofter used, side by side.  Do some research for yourself and
-see if you want to make the switch.  Please note that at this time evil-dvorak does not intend to provide the exact same editing environment that you might expect.  For example, I do not like the default vim command for "Q", "<", ">", etc.  So I've rebound "Q" to (anzu-query-replace-regexp), "<" to (beginning-of-buffer), and ">" to (end-of-buffer).
+The dvorak keyboard has a different goal in mind.  It puts keys, that are often used, side by side.  Do some research for yourself
+and see if you want to make the switch.  Please note that at this time evil-dvorak does not intend to provide the exact same
+editing environment that you might expect.  For example, I do not like the default vim command for "Q", "<", ">", etc.  So I've
+rebound "Q" to (anzu-query-replace-regexp), "<" to (beginning-of-buffer), and ">" to (end-of-buffer).  However, I've been
+contacted by the some of the spacemacs devs, who are considering providing an evil-dvorak layer for spacemacs.  It may or may not
+use my codebase, but they've convinced me to modify evil-dvorak so that it depends on less packages and emulates more of a default vim
+layout.
 
 You can install evil-dvorak from melpa.
 
@@ -44,8 +49,7 @@ state you wish to bind "o" (evil-backward-word-begin) and "e" to (evil-forward-w
 
 ```
 (defun my-evil-dvorak-customizations ()
-  "These are the non-standard customizations, that I've done to my evil-dvorak.
-  These are my various changes that I initially had in evil-dvorak, but I'm removing them to help out the spacemacs devs."
+  "My helpful evil-dvorak customizations"
   (interactive)
   ;;normal mode customizations
   (evil-define-key 'normal evil-dvorak-mode-map
@@ -75,37 +79,23 @@ state you wish to bind "o" (evil-backward-word-begin) and "e" to (evil-forward-w
 
 #### In normal mode
 
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd> h </kbd>   | move the cursor one line up
-<kbd> t </kbd>     | move the cursor one line down
-<kbd> n </kbd>     | move the cursor one character to the left
-<kbd> s </kbd>   | move the cursor one character to the right
-<kbd> o </kbd>     | move backward one word
-<kbd> O </kbd>     | move backward one WORD
-<kbd> e </kbd>   | move forward one word
-<kbd> E </kbd>   | move forward one WORD
-<kbd> a </kbd>   | move to the beginning of the line
-<kbd> A </kbd>   | move to the beginning of the line and enter insert mode
-<kbd> u </kbd> | move to the end of the line
-<kbd> U </kbd> | move to the end of the line and enter insert mode
+Keybinding             | Description
+-----------------------|------------------------------------------------------------
+<kbd> h </kbd>         | move the cursor one line up
+<kbd> t </kbd>         | move the cursor one line down
+<kbd> n </kbd>         | move the cursor one character to the left
+<kbd> s </kbd>         | move the cursor one character to the right
+<kbd> a </kbd>         | move to the beginning of the line
 <kbd> backspace </kbd> | ace-jump-mode
-<kbd> i </kbd>     | insert to the left of point
-<kbd> I </kbd>   | insert to the right of point
-<kbd> , </kbd> | undo last command
-<kbd> . </kbd>     | redo last command
-<kbd> $ </kbd> | check the spelling of the current word
-<kbd> l </kbd>     | recenter the buffer (the same as C-l in emacs state)
-<kbd> j </kbd>     | join the lower line to the end of this line
-<kbd> J </kbd>   | join the current line the end of the previous line
-<kbd> m KEY </kbd>     | mark the current spot in the buffer with KEY
-<kbd> ' KEY </kbd> | go to the marked KEY in the buffer
-<kbd> ; </kbd>     | comment-dwin. This is an emacs command that either adds a comment to the current line, or if the line is highlighted, then it comments out the line
-<kbd> q </kbd>     | save and quit the current buffer. This is the same as (save-buffer) (kill-buffer)
-<kbd> C-w [h \| t \| n \| s] </kbd>     |  move to the up, down, left, or right window.  The syntax [ h \| t \| n \| s ] means that you have to pick either h, t, n, s.  So the only valid commands are C-w h, C-w t, C-w n, C-w s
-<kbd> C-c r </kbd> |  This begins to define an evil macro.  In emacs state the binding for this in C-x (
-<kbd> C-h </kbd>   |  insert a new line below point and switch to insert state
-<kbd> C-t </kbd>   | insert a new line above point and switch to insert state.  The reader should not that this conflicts with the emacs binding of (transpose-chars), which I have rebound to (global-set-key (kbd "C-c t") 'transpose-chars)
+<kbd> k </kbd>         | kill from point to the end of the line
+<kbd> K </kbd>         | kill from point to the beginning of the line
+<kbd> u </kbd>         | undo last command
+<kbd> C-r </kbd>       | redo last command
+<kbd> j </kbd>         | join the lower line to the end of this line
+<kbd> J </kbd>         | join the current line the end of the previous line
+<kbd> C-w [h \         | t \| n \| s] </kbd>     |  move to the up, down, left, or right window.  The syntax [ h \| t \| n \| s ] means that you have to pick either h, t, n, s.  So the only valid commands are C-w h, C-w t, C-w n, C-w s
+<kbd> C-h </kbd>       |  insert a new line below point and switch to insert state
+<kbd> C-t </kbd>       | insert a new line above point and switch to insert state.  The reader should not that this conflicts with the emacs binding of (transpose-chars), which I have rebound to (global-set-key (kbd "C-c t") 'transpose-chars)
 <kbd> spacebar  </kbd> |  inserts a space.
-<kbd> \>  </kbd>  | move point to the beginning of the buffer
-<kbd> \<  </kbd>  | move point to the end of the buffer
+<kbd> \>  </kbd>       | move point to the beginning of the buffer
+<kbd> \<  </kbd>       | move point to the end of the buffer

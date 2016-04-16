@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2015 Joshua Branson
 ;; Author: Joshua Branson
-;; Package-Requires: ((evil  "1.0.8") (ace-jump-mode "2.0") (anzu "0") (helm "0") (evil-surround "0") (wind-move "0"))
+;; Package-Requires: ((evil  "1.0.8"))
 ;; Created: January 30 2015
 ;; Keywords:  dvorak evil vim
 ;; Version: 0.2
@@ -63,13 +63,15 @@
   "s" 'evil-forward-char
   ;;I what to be able to use vaw (visual around word) and viw (visual inner word)
   ;; that's why in visual mode, u and a are not defined.
+  ;; BUT it would be cool to say cie and mean change forward to word-end
+  ;; and cio to mean change backward word-end
   ;;(evil-define-key 'visual "u" 'evil-end-of-line)
   ;;(evil-define-key 'visual "a" 'evil-first-non-blank
-  (kbd "<backspace>") 'avy-goto-char)
+  ;;(evil-define-key 'visual "u" 'evil-end-of-line)
+  )
 
 (evil-define-key 'normal evil-dvorak-mode-map
   ;; Miscellancus
-  (kbd "s-l") #'org-link
   (kbd "t") #'evil-next-line
   (kbd "h") #'previous-line
   (kbd "n") #'backward-char
@@ -78,16 +80,9 @@
   "K" #'(lambda () (interactive)
           "kill from point to the beginning of the line"
           (kill-line 0))
-  "I" 'evil-append
-  "$" 'ispell-word
 
   ;;move the cursor around
   (kbd "C-l") 'recenter-top-bottom
-  "l" 'recenter-top-bottom
-  "o" 'evil-backward-word-begin
-  "e" 'evil-forward-word-begin
-  "O" 'evil-backward-WORD-end
-  "E" 'evil-forward-WORD-end
 
   ;;line manipulation
   "J" 'join-line
@@ -96,18 +91,9 @@
           (join-line 1))
   (kbd "C-h") 'evil-open-below
   (kbd "C-t") 'evil-open-above
-  (kbd "C-c r") 'evil-record-macro
   "'" 'evil-goto-mark
-  "Q" 'anzu-query-replace-regexp
-  (kbd "<backspace>") 'avy-goto-char
   ;;there is no need to set return to newline-and-indent, because electric-indent-mode is now on by default.
-  (kbd "<return>") 'newline-and-indent
-
-  ;;moving on the line
-  (kbd "a") 'evil-first-non-blank
-  (kbd "A") 'evil-insert-line
-  (kbd "u") 'evil-end-of-line
-  (kbd "U") 'evil-append-line)
+  (kbd "<return>") 'newline-and-indent)
 
 (evil-define-key 'insert evil-dvorak-mode-map
   (kbd "C-z") 'evil-normal-state
@@ -118,8 +104,7 @@
   (kbd "C-h") 'evil-next-line
   (kbd "C-t") 'evil-previous-line
   (kbd "C-n") 'backward-char
-  (kbd "C-s") 'forward-char
-  (kbd "C-c r") 'evil-record-macro)
+  (kbd "C-s") 'forward-char)
 
 (provide 'evil-dvorak)
 
