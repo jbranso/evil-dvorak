@@ -15,6 +15,8 @@ I have recently reworked much of evil-dvorak to require only evil.  The only key
  "h", "t", "n", "s", "k", "K", "j", "J", which you can find more details below.
 
 
+### Configuration
+
 You can install evil-dvorak from melpa.
 
 ```
