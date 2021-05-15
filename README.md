@@ -93,5 +93,5 @@ Keybinding             | Description
 <kbd> K </kbd>         | kill from point to the beginning of the line
 <kbd> j </kbd>         | join the lower line to the end of this line
 <kbd> J </kbd>         | join the current line the end of the previous line
-<kbd> C-h </kbd>       |  insert a new line below point and switch to insert state
-<kbd> C-t </kbd>       | insert a new line above point and switch to insert state.  The reader should not that this conflicts with the emacs binding of (transpose-chars), which I have personally rebound to (global-set-key (kbd "C-c t") 'transpose-chars)
+<kbd> C-h </kbd>       | insert a new line below point and switch to insert state
+<kbd> C-t </kbd>       | insert a new line above point and switch to insert state. The reader should note that this conflicts with the emacs binding of (transpose-chars), which I have personally rebound to (global-set-key (kbd "C-c t") 'transpose-chars)
