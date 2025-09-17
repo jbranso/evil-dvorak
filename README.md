@@ -1,3 +1,9 @@
+This project is officially unmaintained.  I have not used it in many years.
+
+I personally gave up trying to use rearrange the vim editing keys.  I still use dvorak, but I just use the default vim keybindings.
+
+"Live long and prosper."
+
 With evil-dvorak you can use emacs's evil mode with bindings, that are friendly to the dvorak keyboard.  (If your keyboard in the top
 left reads "qwerty", then you are using the qwerty keyboard). Why would you want to use the dvorak keyboard instead of qwerty?
 Because the qwerty layout is an outdated keyboard layout.  It was designed for typewriters.  In those days, if you pressed two keys
